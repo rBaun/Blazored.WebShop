@@ -1,9 +1,17 @@
-﻿<div>
-    Search:
-    <input type="text" @bind-value="_filter"/>
-    <button @onclick="HandleSearch">Search</button>
+﻿
+<div class="container">
+    <div class="row align-items-center">
+        <div class="col">
+            <form class="form-inline">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search..." @bind-value="_filter" />
+                </div>
+                <button type="button" class="btn btn-primary" @onclick="HandleSearch">Search</button>
+            </form>
+        </div>
+    </div>
 </div>
-@_filter
+<br />
 
 @code {
 
@@ -11,6 +19,8 @@
 
     [Parameter]
     public EventCallback<string> OnSearch { get; set; }
+
+
 
     private void HandleSearch()
     {

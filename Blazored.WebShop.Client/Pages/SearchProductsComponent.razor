@@ -6,35 +6,25 @@
 
 <h3>SearchProductsComponent</h3>
 <br />
-
 <SearchBarComponent OnSearch="HandleSearch"></SearchBarComponent>
 
 <div class="container">
     <div class="row align-items-start">
-        <div class="card-group">
-            @foreach (var product in _products)
-            {
-                <div class="col-4">
-                    <div class="card h-100" style="width: 18rem;">
-                        <img src="@product.ImageUrl" alt="@product.Name" class="card-img-top" style="width: 100%; height: 15vw; object-fit: cover;"/>
-                        <div class="card-body">
-                            <h5 class="card-title">@product.Name</h5>
-                            <p class="card-text">@product.Description</p>
-                            <h4 class="text-success">@product.Price.ToString("C0")</h4>
-                        </div>
-                    </div>
-                </div>
-            }
-        </div>
+        @if (_products != null && _products.Any())
+        {
+            <div class="card-group">
+                @foreach (var product in _products)
+                {
+                    <ProductItemComponent Product="product"></ProductItemComponent>
+                }
+            </div>
+        }
+        else
+        {
+            <h5 class="align-middle">No products was found.</h5>
+        }
     </div>
 </div>
-
-<ul>
-    @foreach (var product in _products)
-    {
-        <li>@product.Name</li>
-    }
-</ul>
 
 @code {
     private IEnumerable<Product> _products;
@@ -48,7 +38,7 @@
 
     private void HandleSearch(string filter)
     {
-
+        _products = SearchProduct.Execute(filter);
     }
 
 }

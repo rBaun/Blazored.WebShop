@@ -1,0 +1,25 @@
+﻿@using Blazored.WebShop.Core.Business.Models
+
+@if (Product != null)
+{
+    <div class="col">
+        <div class="card h-100" style="width: 18rem;">
+            <img src="@Product.ImageUrl" alt="@Product.Name" class="card-img-top img-thumbnail" style="height: 18vw;object-fit: cover;"/>
+            <div class="card-body">
+                <h5 class="card-title">@Product.Name</h5>
+                <p class="card-text">@Product.Description</p>
+                <h4 class="text-success">@Product.Price.ToString("C0")</h4>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <h5 class="align-middle">Loading...</h5>
+}
+
+
+@code {
+    [Parameter]
+    public Product Product { get; set; }
+}
