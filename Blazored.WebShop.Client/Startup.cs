@@ -10,6 +10,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Blazored.WebShop.Application.Interfaces.Persistence;
+using Blazored.WebShop.Application.UseCases.SearchProduct;
+using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
+using Blazored.WebShop.Application.UseCases.ViewProduct;
+using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces;
+using Blazored.WebShop.Data.Repositories;
 
 namespace Blazored.WebShop.Client
 {
@@ -29,6 +35,13 @@ namespace Blazored.WebShop.Client
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
+
+            // Repositories
+            services.AddTransient<IProductRepository, ProductRepository>();
+
+            // Use Cases
+            services.AddTransient<ISearchProduct, SearchProduct>();
+            services.AddTransient<IViewProduct, ViewProduct>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

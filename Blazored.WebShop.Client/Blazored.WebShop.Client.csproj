@@ -4,4 +4,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Blazored.WebShop.Application\Blazored.WebShop.Application.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Core.Business\Blazored.WebShop.Core.Business.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Data\Blazored.WebShop.Data.csproj" />
+  </ItemGroup>
+
 </Project>
