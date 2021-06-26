@@ -5,16 +5,25 @@
 
 @inject IViewProduct _viewProduct
 
-<div class="card mb-3">
-    <img src="@_product.ImageUrl" class="img-fluid" alt="@_product.Name">
+<!-- Left Side with Image -->
+<div class="text-center">
+    <img src="@_product.ImageUrl" class="float-left" alt="@_product.Name"/>
+</div>
+
+<!-- Right Side with Details -->
+<div class="card mb-3" style="width: 50%;">
     <div class="card-body">
-        <h5 class="card-title">@_product.Name</h5>
-        <h6 class="card-subtitle">@_product.Brand</h6>
-        <h3 class="card-title" style="color: crimson;">@_product.Price</h3>
-        <hr/>
-        <p class="card-text">@_product.Description</p>
+        <h1 class="card-title">@_product.Name</h1>
+        <h2 class="card-subtitle">@_product.Brand</h2>
+        <hr />
+        <h4 class="card-title">Description</h4>
+        <p class="card-text" style="width: 50%;">@_product.Description</p>
+        <h3 class="card-title">Price: <span style="color: crimson;">@_product.Price</span></h3>
     </div>
 </div>
+
+<!-- Link back to products -->
+<NavLink href="products">Back to Products</NavLink>
 
 @code {
 
