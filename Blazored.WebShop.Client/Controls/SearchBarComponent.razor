@@ -2,29 +2,10 @@
 <div class="container">
     <div class="row align-items-center">
         <div class="col">
-            <form class="form-inline">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Search..." @bind-value="_filter" />
-                </div>
-                <button type="button" class="btn btn-primary" @onclick="HandleSearch">Search</button>
-            </form>
+            <input type="text" class="form-control" placeholder="Search..."
+                   @bind-value="@SearchTerm" @bind-value:event="oninput"
+                   @onkeyup="HandleSearch" />
         </div>
     </div>
 </div>
 <br />
-
-@code {
-
-    private string _filter;
-
-    [Parameter]
-    public EventCallback<string> OnSearch { get; set; }
-
-
-
-    private void HandleSearch()
-    {
-        OnSearch.InvokeAsync(_filter);
-    }
-
-}

@@ -1,0 +1,36 @@
+﻿@page "/product/{id:int}"
+@using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces
+@using Blazored.WebShop.Core.Business.Models
+@using Microsoft.AspNetCore.Components
+
+@inject IViewProduct _viewProduct
+
+<div class="card mb-3">
+    <img src="@_product.ImageUrl" class="img-fluid" alt="@_product.Name">
+    <div class="card-body">
+        <h5 class="card-title">@_product.Name</h5>
+        <h6 class="card-subtitle">@_product.Brand</h6>
+        <h3 class="card-title" style="color: crimson;">@_product.Price</h3>
+        <hr/>
+        <p class="card-text">@_product.Description</p>
+    </div>
+</div>
+
+@code {
+
+    private Product _product;
+
+    [Parameter]
+    public int Id { get; set; }
+
+    protected override void OnParametersSet()
+    {
+        base.OnParametersSet();
+
+        if (Id > 0)
+        {
+            _product = _viewProduct.Execute(Id);
+        }
+    }
+
+}
