@@ -1,9 +1,4 @@
 ﻿@page "/product/{id:int}"
-@using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces
-@using Blazored.WebShop.Core.Business.Models
-@using Microsoft.AspNetCore.Components
-
-@inject IViewProduct _viewProduct
 
 <!-- Left Side with Image -->
 <div class="text-center">
@@ -24,22 +19,3 @@
 
 <!-- Link back to products -->
 <NavLink href="products">Back to Products</NavLink>
-
-@code {
-
-    private Product _product;
-
-    [Parameter]
-    public int Id { get; set; }
-
-    protected override void OnParametersSet()
-    {
-        base.OnParametersSet();
-
-        if (Id > 0)
-        {
-            _product = _viewProduct.Execute(Id);
-        }
-    }
-
-}

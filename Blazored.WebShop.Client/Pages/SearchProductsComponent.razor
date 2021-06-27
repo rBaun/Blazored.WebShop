@@ -1,10 +1,6 @@
-﻿@page "/products"
-@using System.Collections.Generic
-@using System.Linq
-@using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces
-@using Blazored.WebShop.Core.Business.Models
+﻿@using System.Linq
 
-@inject ISearchProduct SearchProduct
+@page "/products"
 
 <h3>SearchProductsComponent</h3>
 <br />
@@ -27,20 +23,3 @@
         }
     </div>
 </div>
-
-@code {
-    private IEnumerable<Product> _products;
-
-    protected override void OnInitialized()
-    {
-        base.OnInitialized();
-
-        _products = SearchProduct.Execute();
-    }
-
-    private void HandleSearch(string filter)
-    {
-        _products = SearchProduct.Execute(filter);
-    }
-
-}
