@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Components;
+﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazored.WebShop.Client.Controls
+namespace Blazored.WebShop.Client.Common.Features
 {
     public partial class SearchBarComponent
     {

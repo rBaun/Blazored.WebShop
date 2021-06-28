@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
 using Microsoft.AspNetCore.Components;
 
-namespace Blazored.WebShop.Client.Pages
+namespace Blazored.WebShop.Client.CustomerPortal.Pages
 {
     partial class SearchProductsComponent
     {
