@@ -15,7 +15,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Blazored.WebShop.Application\Blazored.WebShop.Application.csproj" />
-    <ProjectReference Include="..\Blazored.WebShop.Client.Modules\Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj" />
     <ProjectReference Include="..\Blazored.WebShop.Core.Business\Blazored.WebShop.Core.Business.csproj" />
   </ItemGroup>
 
