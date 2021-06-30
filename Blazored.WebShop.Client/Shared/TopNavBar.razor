@@ -1,3 +1,12 @@
-﻿<nav class="navbar navbar-light bg-light">
-    <a class="navbar-brand" href="/">Blazored WebShop</a>
+﻿@using Blazored.WebShop.Client.CustomerPortal.Features
+
+<nav class="navbar navbar-light bg-light">
+    <a class="navbar-brand" href="/">
+        Blazored WebShop
+    </a>
+    <a class="nav-item ml-auto">
+        <NavLink class="nav-link" href="cart">
+            <CartComponent></CartComponent>
+        </NavLink>
+    </a>
 </nav>
