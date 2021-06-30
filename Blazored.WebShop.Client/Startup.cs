@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blazored.WebShop.Application.Interfaces.Persistence;
+using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.UseCases.SearchProduct;
 using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
 using Blazored.WebShop.Application.UseCases.ViewProduct;
@@ -37,11 +38,16 @@ namespace Blazored.WebShop.Client
             services.AddSingleton<WeatherForecastService>();
 
             // Repositories
-            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddSingleton<IProductRepository, ProductRepository>();
+
+            // Local Storage
+            services.AddScoped<IShoppingCart, ShoppingCart.LocalStorage.ShoppingCart>();
 
             // Use Cases
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
+            services.AddTransient<IAddProductToCart, AddProductToCart>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

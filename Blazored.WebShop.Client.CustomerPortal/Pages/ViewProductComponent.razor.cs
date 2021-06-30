@@ -6,7 +6,9 @@ namespace Blazored.WebShop.Client.CustomerPortal.Pages
 {
     partial class ViewProductComponent
     {
+        [Inject] public NavigationManager NavigationManager { get; set; }
         [Inject] public IViewProduct ViewProduct { get; set; }
+        [Inject] public IAddProductToCart AddProductToCart { get; set; }
         private Product _product;
 
         [Parameter]
@@ -20,6 +22,12 @@ namespace Blazored.WebShop.Client.CustomerPortal.Pages
             {
                 _product = ViewProduct.Execute(Id);
             }
+        }
+
+        private void AddToCart()
+        {
+            AddProductToCart.Execute(_product.ProductId);
+            NavigationManager.NavigateTo("/");
         }
     }
 }

@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.Client.Adm
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.Client.CustomerPortal", "Blazored.WebShop.Client.CustomerPortal\Blazored.WebShop.Client.CustomerPortal.csproj", "{140D155A-7C7A-45E2-9ECC-A96BCA565CC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazored.WebShop.Client.Common", "Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj", "{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.Client.Common", "Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj", "{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazored.WebShop.ShoppingCart.LocalStorage", "Blazored.WebShop.ShoppingCart.LocalStorage\Blazored.WebShop.ShoppingCart.LocalStorage.csproj", "{194273A8-2105-43B4-9DBA-D87A93A4A4F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -51,6 +53,10 @@ Global
 		{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{194273A8-2105-43B4-9DBA-D87A93A4A4F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{194273A8-2105-43B4-9DBA-D87A93A4A4F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{194273A8-2105-43B4-9DBA-D87A93A4A4F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{194273A8-2105-43B4-9DBA-D87A93A4A4F2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
