@@ -14,6 +14,8 @@ using Blazored.WebShop.Application.Interfaces.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.UseCases.SearchProduct;
 using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
+using Blazored.WebShop.Application.UseCases.ShoppingCart;
+using Blazored.WebShop.Application.UseCases.ShoppingCart.Interfaces;
 using Blazored.WebShop.Application.UseCases.ViewProduct;
 using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces;
 using Blazored.WebShop.Data.Repositories;
@@ -47,6 +49,7 @@ namespace Blazored.WebShop.Client
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
             services.AddTransient<IAddProductToCart, AddProductToCart>();
+            services.AddTransient<IViewShoppingCart, ViewShoppingCart>();
 
         }
 

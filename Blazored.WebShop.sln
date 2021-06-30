@@ -17,7 +17,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.Client.Cus
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.Client.Common", "Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj", "{A9E3A8DE-A20D-4D15-BF2C-C019D757B6A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazored.WebShop.ShoppingCart.LocalStorage", "Blazored.WebShop.ShoppingCart.LocalStorage\Blazored.WebShop.ShoppingCart.LocalStorage.csproj", "{194273A8-2105-43B4-9DBA-D87A93A4A4F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blazored.WebShop.ShoppingCart.LocalStorage", "Blazored.WebShop.ShoppingCart.LocalStorage\Blazored.WebShop.ShoppingCart.LocalStorage.csproj", "{194273A8-2105-43B4-9DBA-D87A93A4A4F2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

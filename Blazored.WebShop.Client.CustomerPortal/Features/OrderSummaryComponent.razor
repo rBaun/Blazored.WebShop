@@ -1,0 +1,51 @@
+﻿<div class="card m-2" style="width: 25rem;">
+    <div class="card-body">
+        <h5 class="card-title">Order Summary</h5>
+
+        @foreach (var item in Order.OrderLineItems)
+        {
+            <div class="card-text d-flex justify-content-between">
+                <div>
+                    @($"{item.Quantity}x {item.Product.Name}")
+                </div>
+                <div>
+                    @item.Product.Price.ToString("C")
+                </div>
+            </div>
+        }
+        <hr/>
+        @*<div>
+                Items (@orderLineItemsCount):
+            </div>
+            <div>
+                @orderTotalPrice.ToString("C")
+            </div>*@
+
+        <div class="card-text d-flex justify-content-between">
+            <div>
+                Shipping and Handling
+            </div>
+            <div>
+                <text>0.00 kr.</text>
+            </div>
+        </div>
+        <div class="card-text d-flex justify-content-between">
+            <div>
+                Estimated Tax
+            </div>
+            <div>
+                <text>0.00 kr.</text>
+            </div>
+        </div>
+        <hr />
+        <div class="card-text d-flex justify-content-between" style="color: forestgreen;">
+            <div>
+                <b>Order Total:</b>
+            </div>
+            <div>
+                <b>@orderTotalPrice.ToString("C")</b>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-primary" @onclick="PlaceOrder">Place Your Order</button>
+</div>

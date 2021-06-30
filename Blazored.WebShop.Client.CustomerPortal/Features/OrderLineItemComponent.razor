@@ -2,7 +2,7 @@
 {
     <li class="row">
         <div class="col">
-            <img src="@OrderLineItem.Product.ImageUrl" alt="@OrderLineItem.Product.ProductId"/>
+            <img src="@OrderLineItem.Product.ImageUrl" alt="@OrderLineItem.Product.ProductId" style="width: 362px; height: 300px; object-fit: scale-down;"/>
         </div>
         <div class="col">
             <h5>@OrderLineItem.Product.Name</h5>
@@ -14,7 +14,7 @@
                        @onchange="OnQuantityChanged"/>
             </div>
             <div>
-                Price: &nbsp;&nbsp;
+                Price per piece: &nbsp;&nbsp;
                 @OrderLineItem.Product.Price.ToString("C0")
             </div>
         </div>
