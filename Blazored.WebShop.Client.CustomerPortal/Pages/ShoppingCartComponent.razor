@@ -1,0 +1,31 @@
+﻿@page "/cart"
+
+<h3>ShoppingCartComponent</h3>
+<br/>
+
+<div class="row">
+    <div class="col-6">
+        @* Display OrderLines *@
+        <ul>
+            @for (var i = 0; i < _order.OrderLineItems.Count; i++)
+            {
+                <OrderLineItemComponent OrderLineItem="_order.OrderLineItems[i]" />
+
+                @if (i < _order.OrderLineItems.Count - 1)
+                {
+                    <li style="list-style: none;">
+                        <hr />
+                    </li>
+                }
+            }
+        </ul>
+    </div>
+    <div class="col">
+        @* Display Order Summary *@
+
+    </div>
+</div>
+
+@code {
+
+}

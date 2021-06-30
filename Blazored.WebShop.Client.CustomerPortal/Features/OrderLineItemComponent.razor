@@ -1,0 +1,28 @@
+﻿@if (OrderLineItem?.Product != null)
+{
+    <li class="row">
+        <div class="col">
+            <img src="@OrderLineItem.Product.ImageUrl" alt="@OrderLineItem.Product.ProductId"/>
+        </div>
+        <div class="col">
+            <h5>@OrderLineItem.Product.Name</h5>
+            <div>
+                Quantity: &nbsp;&nbsp;
+                <input type="number" 
+                       min="0" 
+                       value="@OrderLineItem.Quantity"
+                       @onchange="OnQuantityChanged"/>
+            </div>
+            <div>
+                Price: &nbsp;&nbsp;
+                @OrderLineItem.Product.Price.ToString("C0")
+            </div>
+        </div>
+        <div class="col">
+            <button class="btn btn-light" @onclick="@( () => RemoveProduct(OrderLineItem.Product.ProductId))"> 
+                Remove
+            </button>
+        </div>
+    </li>
+}
+
