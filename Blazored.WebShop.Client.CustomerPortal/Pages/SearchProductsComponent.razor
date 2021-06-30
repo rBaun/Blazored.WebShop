@@ -5,22 +5,26 @@
 
 <h3>SearchProductsComponent</h3>
 <br />
-<SearchBarComponent OnSearch="HandleSearch"></SearchBarComponent>
+<SearchBarComponent OnSearch="HandleSearch" />
 
-<div class="container">
-    <div class="row align-items-start">
-        @if (_products != null && _products.Any())
-        {
-            <div class="card-group">
+@if (_products != null && _products.Any())
+{
+    <div class="container-fluid">
+        <div class="row">
+            <div class="card-deck">
                 @foreach (var product in _products)
                 {
-                    <ProductItemComponent Product="product"></ProductItemComponent>
+                    <div class="col">
+                        <ProductCardComponent Product="product" />
+                    </div>
                 }
             </div>
-        }
-        else
-        {
-            <h5 class="align-middle">No products was found.</h5>
-        }
+        </div>
     </div>
-</div>
+
+
+}
+else
+{
+    <h5 class="align-middle">No products was found.</h5>
+}
