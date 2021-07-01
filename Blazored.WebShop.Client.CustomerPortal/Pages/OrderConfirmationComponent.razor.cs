@@ -4,7 +4,7 @@ using System.Linq;
 using System.Reflection.Metadata;
 using System.Text;
 using System.Threading.Tasks;
-using Blazored.WebShop.Application.UseCases.OrderConfirmation.Interfaces;
+using Blazored.WebShop.Application.UseCases.CustomerPortal.OrderConfirmation.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
 using Microsoft.AspNetCore.Components;
 

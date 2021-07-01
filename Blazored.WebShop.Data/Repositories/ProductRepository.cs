@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using Blazored.WebShop.Application.Interfaces.Persistence;
+using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Core.Business.Models;
 
 namespace Blazored.WebShop.Data.Repositories

@@ -1,4 +1,4 @@
-﻿using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces;
+﻿using Blazored.WebShop.Application.UseCases.CustomerPortal.ViewProduct.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
 using Microsoft.AspNetCore.Components;
 

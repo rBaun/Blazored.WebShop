@@ -1,9 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Blazored.WebShop.Core.Business.Models;
 
-namespace Blazored.WebShop.Application.Interfaces.Persistence
+namespace Blazored.WebShop.Application.Plugins.Persistence
 {
     public interface IProductRepository
     {

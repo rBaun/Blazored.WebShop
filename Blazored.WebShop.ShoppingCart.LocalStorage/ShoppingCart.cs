@@ -6,7 +6,7 @@ using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading;
 using System.Threading.Tasks;
-using Blazored.WebShop.Application.Interfaces.Persistence;
+using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Core.Business.Models;
 using Microsoft.JSInterop;

@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic;
-using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
+using Blazored.WebShop.Application.UseCases.CustomerPortal.SearchProduct.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
 using Microsoft.AspNetCore.Components;
 
