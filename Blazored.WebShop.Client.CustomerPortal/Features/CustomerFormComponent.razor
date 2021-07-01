@@ -1,0 +1,34 @@
+﻿@if (_customer != null)
+{
+    <EditForm Model="_customer" class="form-inline" OnValidSubmit="HandleValidSubmit">
+        <DataAnnotationsValidator></DataAnnotationsValidator>
+        <ValidationSummary></ValidationSummary>
+
+        <div class="form-group">
+            <label for="name">Name</label>
+            <InputText id="name" @bind-Value="_customer.CustomerName" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Address</label>
+            <InputText id="address" @bind-Value="_customer.CustomerAddress" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="city">City</label>
+            <InputText id="city" @bind-Value="_customer.CustomerCity" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="province">Province</label>
+            <InputText id="province" @bind-Value="_customer.CustomerStateProvince" class="form-control"></InputText>
+        </div>
+
+        <div class="form-group">
+            <label for="country">Country</label>
+            <InputText id="country" @bind-Value="_customer.CustomerCountry" class="form-control"></InputText>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Place Your Order</button>
+    </EditForm>
+}

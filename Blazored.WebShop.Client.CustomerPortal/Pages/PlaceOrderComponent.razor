@@ -1,0 +1,16 @@
+﻿@page "/PlaceOrder"
+
+<h3>Placing Your Order</h3>
+
+@if (_order != null)
+{
+<div class="row">
+    <div class="col">
+        @* Customer Information *@
+        <CustomerFormComponent OnCustomerInfoSubmitted="HandleCustomerInfoSubmitted"></CustomerFormComponent>
+    </div>
+    <div class="col">
+        @* Display Order Summary *@
+    </div>
+</div>
+}

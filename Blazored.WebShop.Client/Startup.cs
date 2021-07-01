@@ -11,6 +11,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Blazored.WebShop.Application.Interfaces.Persistence;
+using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.Plugins.StateManagement;
 using Blazored.WebShop.Application.UseCases.SearchProduct;
@@ -19,6 +20,8 @@ using Blazored.WebShop.Application.UseCases.ShoppingCart;
 using Blazored.WebShop.Application.UseCases.ShoppingCart.Interfaces;
 using Blazored.WebShop.Application.UseCases.ViewProduct;
 using Blazored.WebShop.Application.UseCases.ViewProduct.Interfaces;
+using Blazored.WebShop.Core.Business.Services;
+using Blazored.WebShop.Core.Business.Services.Interfaces;
 using Blazored.WebShop.Data.Repositories;
 using Blazored.WebShop.StateStore.DI;
 
@@ -42,10 +45,12 @@ namespace Blazored.WebShop.Client
             services.AddSingleton<WeatherForecastService>();
 
             services.AddSingleton<IProductRepository, ProductRepository>();
+            services.AddSingleton<IOrderRepository, OrderRepository>();
 
             services.AddScoped<IShoppingCart, ShoppingCart.LocalStorage.ShoppingCart>();
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
 
+            services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ISearchProduct, SearchProduct>();
             services.AddTransient<IViewProduct, ViewProduct>();
             services.AddTransient<IAddProductToCart, AddProductToCart>();
