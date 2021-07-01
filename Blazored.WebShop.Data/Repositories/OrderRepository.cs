@@ -9,7 +9,7 @@ namespace Blazored.WebShop.Data.Repositories
 {
     public class OrderRepository : IOrderRepository
     {
-        private Dictionary<int, Order> _orders;
+        private readonly Dictionary<int, Order> _orders;
 
         public OrderRepository()
         {
@@ -29,7 +29,6 @@ namespace Blazored.WebShop.Data.Repositories
         public int CreateOrder(Order order)
         {
             order.OrderId = _orders.Count + 1;
-            order.UniqueId = Guid.NewGuid().ToString();
             _orders.Add(order.OrderId.Value, order);
 
             return order.OrderId.Value;

@@ -52,6 +52,7 @@ namespace Blazored.WebShop.Client
             services.AddTransient<IViewShoppingCart, ViewShoppingCart>();
             services.AddTransient<IRemoveProduct, RemoveProduct>();
             services.AddTransient<IUpdateQuantity, UpdateQuantity>();
+            services.AddTransient<IPlaceOrder, PlaceOrder>();
 
         }
 

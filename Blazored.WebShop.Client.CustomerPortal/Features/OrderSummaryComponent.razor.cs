@@ -10,6 +10,7 @@ namespace Blazored.WebShop.Client.CustomerPortal.Features
 {
     partial class OrderSummaryComponent
     {
+        [Inject] public NavigationManager NavigationManager { get; set; }
         [Parameter] public Order Order { get; set; }
 
         private int _orderLineItemsCount = 0;
@@ -27,7 +28,7 @@ namespace Blazored.WebShop.Client.CustomerPortal.Features
 
         private void PlaceOrder()
         {
-
+            NavigationManager.NavigateTo("/PlaceOrder");
         }
     }
 }
