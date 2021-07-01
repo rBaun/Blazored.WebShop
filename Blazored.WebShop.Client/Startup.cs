@@ -13,6 +13,12 @@ using System.Threading.Tasks;
 using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.Plugins.StateManagement;
+using Blazored.WebShop.Application.UseCases.AdminPortal.OrderDetails;
+using Blazored.WebShop.Application.UseCases.AdminPortal.OrderDetails.Interfaces;
+using Blazored.WebShop.Application.UseCases.AdminPortal.OutstandingOrders;
+using Blazored.WebShop.Application.UseCases.AdminPortal.OutstandingOrders.Interfaces;
+using Blazored.WebShop.Application.UseCases.AdminPortal.ProcessedOrders;
+using Blazored.WebShop.Application.UseCases.AdminPortal.ProcessedOrders.Interfaces;
 using Blazored.WebShop.Application.UseCases.CustomerPortal.OrderConfirmation;
 using Blazored.WebShop.Application.UseCases.CustomerPortal.OrderConfirmation.Interfaces;
 using Blazored.WebShop.Application.UseCases.CustomerPortal.PlaceOrder;
@@ -62,6 +68,11 @@ namespace Blazored.WebShop.Client
             services.AddTransient<IUpdateQuantity, UpdateQuantity>();
             services.AddTransient<IPlaceOrder, PlaceOrder>();
             services.AddTransient<IViewOrderConfirmation, ViewOrderConfirmation>();
+
+            services.AddTransient<IViewOrdersCompleted, ViewOrdersCompleted>();
+            services.AddTransient<IProcessOrder, ProcessOrder>();
+            services.AddTransient<IViewOrderDetails, ViewOrderDetails>();
+            services.AddTransient<IViewOrdersInProgress, ViewOrdersInProgress>();
 
         }
 
