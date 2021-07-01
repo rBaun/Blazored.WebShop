@@ -12,16 +12,17 @@ namespace Blazored.WebShop.Client.CustomerPortal.Features
     {
         [Parameter] public Order Order { get; set; }
 
-        private int orderLineItemsCount = 0;
-        private double orderTotalPrice = 0;
+        private int _orderLineItemsCount = 0;
+        private double _orderTotalPrice = 0;
 
         protected override void OnParametersSet()
         {
             base.OnParametersSet();
 
             if (Order == null) return;
-            orderLineItemsCount = Order.OrderLineItems.Count;
-            Order.OrderLineItems.ForEach(item => orderTotalPrice += item.Price * item.Quantity);
+            _orderLineItemsCount = Order.OrderLineItems.Count;
+            _orderTotalPrice = 0; // calculates new price when parameters are set, starting from 0
+            Order.OrderLineItems.ForEach(item => _orderTotalPrice += item.Price * item.Quantity);
         }
 
         private void PlaceOrder()

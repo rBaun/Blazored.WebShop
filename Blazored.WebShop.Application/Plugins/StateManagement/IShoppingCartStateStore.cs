@@ -10,6 +10,6 @@ namespace Blazored.WebShop.Application.Plugins.StateManagement
         Task<int> GetOrderLineItemsCount();
 
         void UpdateOrderLineItemsCount();
-
+        void UpdateProductQuantity();
     }
 }

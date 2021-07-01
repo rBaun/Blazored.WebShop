@@ -10,7 +10,10 @@
             <ul>
                 @for (var i = 0; i < _order.OrderLineItems.Count; i++)
                 {
-                    <OrderLineItemComponent OrderLineItem="_order.OrderLineItems[i]" />
+                    <OrderLineItemComponent 
+                                            OrderLineItem="_order.OrderLineItems[i]"
+                                            OnQuantityUpdated="HandleRemovedProduct"
+                                            OnRemovedProduct="HandleUpdateQuantity"/>
 
                     @if (i < _order.OrderLineItems.Count - 1)
                     {

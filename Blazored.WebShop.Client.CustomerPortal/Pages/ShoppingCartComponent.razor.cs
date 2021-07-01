@@ -22,5 +22,15 @@ namespace Blazored.WebShop.Client.CustomerPortal.Pages
                 StateHasChanged();
             }
         }
+
+        private void HandleRemovedProduct(Order order)
+        {
+            _order = order;
+        }
+
+        private void HandleUpdateQuantity(Order order)
+        {
+            _order = order;
+        }
     }
 }

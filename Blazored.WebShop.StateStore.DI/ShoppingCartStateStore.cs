@@ -31,5 +31,10 @@ namespace Blazored.WebShop.StateStore.DI
         {
             BroadcastStateChange();
         }
+
+        public void UpdateProductQuantity()
+        {
+            BroadcastStateChange();
+        }
     }
 }
