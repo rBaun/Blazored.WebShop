@@ -13,7 +13,7 @@
                 </div>
             </div>
         }
-        <hr/>
+        <hr />
         @*<div>
                 Items (@orderLineItemsCount):
             </div>
@@ -47,5 +47,9 @@
             </div>
         </div>
     </div>
-    <button class="btn btn-primary" @onclick="PlaceOrder">Place Your Order</button>
+
+    @if (!HidePlaceOrderButton)
+    {
+        <button class="btn btn-primary" @onclick="PlaceOrder">Place Your Order</button>
+    }
 </div>

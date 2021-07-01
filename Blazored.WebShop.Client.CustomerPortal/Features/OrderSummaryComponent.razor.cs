@@ -12,6 +12,7 @@ namespace Blazored.WebShop.Client.CustomerPortal.Features
     {
         [Inject] public NavigationManager NavigationManager { get; set; }
         [Parameter] public Order Order { get; set; }
+        [Parameter] public bool HidePlaceOrderButton { get; set; } = false;
 
         private int _orderLineItemsCount = 0;
         private double _orderTotalPrice = 0;
