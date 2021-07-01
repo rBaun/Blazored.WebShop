@@ -1,15 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.Plugins.StateManagement;
-using Blazored.WebShop.Application.UseCases.ShoppingCart.Interfaces;
+using Blazored.WebShop.Application.UseCases.PlaceOrder.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
 using Blazored.WebShop.Core.Business.Services.Interfaces;
 
-namespace Blazored.WebShop.Application.UseCases.ShoppingCart
+namespace Blazored.WebShop.Application.UseCases.PlaceOrder
 {
     public class PlaceOrder : IPlaceOrder
     {

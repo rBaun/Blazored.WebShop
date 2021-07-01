@@ -1,0 +1,38 @@
+﻿@page "/order-confirmation/{UniqueId}"
+
+<h3>Order Confirmation</h3>
+<br />
+
+@if (_order != null)
+{
+    <p><b>Shipping Information</b></p>
+    <hr />
+    <p>@_order.CustomerName</p>
+    <p>@_order.CustomerAddress</p>
+    <p>@_order.CustomerCity</p>
+    <p>@_order.CustomerStateProvince</p>
+    <p>@_order.CustomerCountry</p>
+    <br />
+    <OrderSummaryComponent Order="_order" HidePlaceOrderButton="true"></OrderSummaryComponent>
+    <br/>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in _order.OrderLineItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

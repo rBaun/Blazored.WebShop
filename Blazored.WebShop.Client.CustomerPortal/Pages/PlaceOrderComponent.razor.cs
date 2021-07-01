@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Blazored.WebShop.Application.UseCases.PlaceOrder.Interfaces;
 using Blazored.WebShop.Application.UseCases.ShoppingCart.Interfaces;
 using Blazored.WebShop.Client.CustomerPortal.ViewModels;
 using Blazored.WebShop.Core.Business.Models;

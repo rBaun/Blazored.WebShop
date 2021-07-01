@@ -14,6 +14,10 @@ using Blazored.WebShop.Application.Interfaces.Persistence;
 using Blazored.WebShop.Application.Plugins.Persistence;
 using Blazored.WebShop.Application.Plugins.Presentation;
 using Blazored.WebShop.Application.Plugins.StateManagement;
+using Blazored.WebShop.Application.UseCases.OrderConfirmation;
+using Blazored.WebShop.Application.UseCases.OrderConfirmation.Interfaces;
+using Blazored.WebShop.Application.UseCases.PlaceOrder;
+using Blazored.WebShop.Application.UseCases.PlaceOrder.Interfaces;
 using Blazored.WebShop.Application.UseCases.SearchProduct;
 using Blazored.WebShop.Application.UseCases.SearchProduct.Interfaces;
 using Blazored.WebShop.Application.UseCases.ShoppingCart;
@@ -58,6 +62,7 @@ namespace Blazored.WebShop.Client
             services.AddTransient<IRemoveProduct, RemoveProduct>();
             services.AddTransient<IUpdateQuantity, UpdateQuantity>();
             services.AddTransient<IPlaceOrder, PlaceOrder>();
+            services.AddTransient<IViewOrderConfirmation, ViewOrderConfirmation>();
 
         }
 
