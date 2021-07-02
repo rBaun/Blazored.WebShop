@@ -13,21 +13,21 @@ namespace Blazored.WebShop.Client.Controllers
         [Route("/authenticate")]
         public async Task<IActionResult> Authenticate([FromQuery] string user, [FromQuery] string password)
         {
-            if (user == "admin" && password == "admin")
+            if (user != "admin" || password != "admin") 
+                return Unauthorized();
+
+            var userClaims = new List<Claim>()
             {
-                var userClaims = new List<Claim>()
-                {
-                    new Claim(ClaimTypes.Name, user),
-                    new Claim(ClaimTypes.Email, "admin@blazoredWebshop.com"),
-                    new Claim(ClaimTypes.HomePhone, "12341234")
-                };
+                new Claim(ClaimTypes.Name, user),
+                new Claim(ClaimTypes.Email, "admin@blazoredWebshop.com"),
+                new Claim(ClaimTypes.HomePhone, "12341234")
+            };
 
-                var userIdentity = new ClaimsIdentity(userClaims, "Blazored.WebShop.CookieAuth");
+            var userIdentity = new ClaimsIdentity(userClaims, "Blazored.WebShop.CookieAuth");
 
-                var userClaimsPrincipal = new ClaimsPrincipal(userIdentity);
+            var userClaimsPrincipal = new ClaimsPrincipal(userIdentity);
 
-                await HttpContext.SignInAsync("Blazored.WebShop.CookieAuth", userClaimsPrincipal);
-            }
+            await HttpContext.SignInAsync("Blazored.WebShop.CookieAuth", userClaimsPrincipal);
 
             return Redirect("/orders-in-progress");
         }

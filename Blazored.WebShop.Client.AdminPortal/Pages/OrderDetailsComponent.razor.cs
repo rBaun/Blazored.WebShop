@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Blazored.WebShop.Application.UseCases.AdminPortal.OrderDetails.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 
 namespace Blazored.WebShop.Client.AdminPortal.Pages
 {
+    [Authorize]
     partial class OrderDetailsComponent
     {
         [Inject] public NavigationManager NavigationManager { get; set; }

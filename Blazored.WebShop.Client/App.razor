@@ -5,7 +5,11 @@
                                     typeof(Blazored.WebShop.Client.AdminPortal.Pages.ViewOrdersInProgressComponent).Assembly
                                   }">
     <Found Context="routeData">
-        <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
+        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+            <NotAuthorized>
+                <LoginComponent></LoginComponent>
+            </NotAuthorized>
+        </AuthorizeRouteView>
     </Found>
     <NotFound>
         <LayoutView Layout="@typeof(MainLayout)">

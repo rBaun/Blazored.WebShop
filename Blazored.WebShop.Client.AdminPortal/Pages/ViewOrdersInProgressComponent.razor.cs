@@ -5,10 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using Blazored.WebShop.Application.UseCases.AdminPortal.OutstandingOrders.Interfaces;
 using Blazored.WebShop.Core.Business.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 
 namespace Blazored.WebShop.Client.AdminPortal.Pages
 {
+    [Authorize]
     partial class ViewOrdersInProgressComponent
     {
         [Inject] public IViewOrdersInProgress ViewOrdersInProgress { get; set; }
