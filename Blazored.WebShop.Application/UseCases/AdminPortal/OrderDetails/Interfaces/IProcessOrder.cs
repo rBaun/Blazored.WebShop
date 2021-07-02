@@ -6,6 +6,6 @@ namespace Blazored.WebShop.Application.UseCases.AdminPortal.OrderDetails.Interfa
 {
     public interface IProcessOrder
     {
-
+        bool Execute(int orderId, string adminUsername);
     }
 }
