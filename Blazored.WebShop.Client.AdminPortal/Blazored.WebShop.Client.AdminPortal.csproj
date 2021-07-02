@@ -14,8 +14,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\" />
-    <Folder Include="Pages\" />
+    <ProjectReference Include="..\Blazored.WebShop.Application\Blazored.WebShop.Application.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Client.Common\Blazored.WebShop.Client.Common.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Data\Blazored.WebShop.Data.csproj" />
   </ItemGroup>
 
 </Project>

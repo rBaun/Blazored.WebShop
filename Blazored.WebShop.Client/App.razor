@@ -1,7 +1,8 @@
 <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true"
         AdditionalAssemblies="new[] {
                                     typeof(Blazored.WebShop.Client.Common.Features.SearchBarComponent).Assembly,
-                                    typeof(Blazored.WebShop.Client.CustomerPortal.Features.ProductCardComponent).Assembly
+                                    typeof(Blazored.WebShop.Client.CustomerPortal.Features.ProductCardComponent).Assembly,
+                                    typeof(Blazored.WebShop.Client.AdminPortal.Pages.ViewOrdersInProgressComponent).Assembly
                                   }">
     <Found Context="routeData">
         <RouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)" />
