@@ -31,7 +31,8 @@ using Blazored.WebShop.Application.UseCases.CustomerPortal.ViewProduct;
 using Blazored.WebShop.Application.UseCases.CustomerPortal.ViewProduct.Interfaces;
 using Blazored.WebShop.Core.Business.Services;
 using Blazored.WebShop.Core.Business.Services.Interfaces;
-using Blazored.WebShop.Data.Repositories;
+using Blazored.WebShop.Persistence.SQL.Repositories;
+//using Blazored.WebShop.Data.Repositories; /** HARDCODED REPOSITORIES **/
 using Blazored.WebShop.Persistence.SQL.Wrappers;
 using Blazored.WebShop.Persistence.SQL.Wrappers.Interfaces;
 using Blazored.WebShop.StateStore.DI;
@@ -63,12 +64,13 @@ namespace Blazored.WebShop.Client
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
 
-            services.AddSingleton<IProductRepository, ProductRepository>();
-            services.AddSingleton<IOrderRepository, OrderRepository>();
-            services.AddSingleton<IDataAccess, DataAccess>();
+            services.AddTransient<IDataAccess>(sp => new DataAccess(Configuration.GetConnectionString("Default")));
 
             services.AddScoped<IShoppingCart, ShoppingCart.LocalStorage.ShoppingCart>();
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
+
+            services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<IOrderRepository, OrderRepository>();
 
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<ISearchProduct, SearchProduct>();
@@ -84,7 +86,6 @@ namespace Blazored.WebShop.Client
             services.AddTransient<IProcessOrder, ProcessOrder>();
             services.AddTransient<IViewOrderDetails, ViewOrderDetails>();
             services.AddTransient<IViewOrdersInProgress, ViewOrdersInProgress>();
-
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
