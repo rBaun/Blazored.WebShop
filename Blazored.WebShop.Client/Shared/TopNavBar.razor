@@ -1,12 +1,50 @@
 ﻿@using Blazored.WebShop.Client.CustomerPortal.Features
 
-<nav class="navbar navbar-light bg-light">
+@*<nav class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="/">
         Blazored WebShop
     </a>
-    <a class="nav-item ml-auto">
-        <NavLink class="nav-link" href="cart">
-            <CartComponent></CartComponent>
-        </NavLink>
-    </a>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" href="orders-in-progress">
+                    Outstanding Orders
+                    <span class="sr-only">(current)</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="orders-completed">
+                    Processed Orders
+                </a>
+            </li>
+            <li class="nav-item ml-auto">
+                <NavLink class="nav-link" href="cart">
+                    <CartComponent></CartComponent>
+                </NavLink>
+            </li>
+        </ul>
+    </div>
+
+
+</nav>*@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="/">Blazored WebShop</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/products">Products </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/orders-in-progress">Outstanding Orders </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/orders-completed">Processed Orders </a>
+            </li>
+        </ul>
+    </div>
 </nav>
