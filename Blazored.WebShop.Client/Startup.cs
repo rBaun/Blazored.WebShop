@@ -49,6 +49,14 @@ namespace Blazored.WebShop.Client
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddControllers();
+            services.AddAuthentication("Blazored.WebShop.CookieAuth")
+                .AddCookie("Blazored.WebShop.CookieAuth", config =>
+                {
+                    config.Cookie.Name = "Blazored.WebShop.CookieAuth";
+                    config.LoginPath = "/authenticate";
+                });
+
             services.AddRazorPages();
             services.AddServerSideBlazor();
             services.AddSingleton<WeatherForecastService>();
@@ -95,8 +103,12 @@ namespace Blazored.WebShop.Client
 
             app.UseRouting();
 
+            app.UseAuthentication();
+            app.UseAuthorization();
+
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllers();
                 endpoints.MapBlazorHub();
                 endpoints.MapFallbackToPage("/_Host");
             });
