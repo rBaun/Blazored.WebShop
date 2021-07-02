@@ -1,19 +1,21 @@
-<Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true"
-        AdditionalAssemblies="new[] {
+<CascadingAuthenticationState>
+    <Router AppAssembly="@typeof(Program).Assembly" PreferExactMatches="@true"
+            AdditionalAssemblies="new[] {
                                     typeof(Blazored.WebShop.Client.Common.Features.SearchBarComponent).Assembly,
                                     typeof(Blazored.WebShop.Client.CustomerPortal.Features.ProductCardComponent).Assembly,
                                     typeof(Blazored.WebShop.Client.AdminPortal.Pages.ViewOrdersInProgressComponent).Assembly
                                   }">
-    <Found Context="routeData">
-        <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
-            <NotAuthorized>
-                <LoginComponent></LoginComponent>
-            </NotAuthorized>
-        </AuthorizeRouteView>
-    </Found>
-    <NotFound>
-        <LayoutView Layout="@typeof(MainLayout)">
-            <p>Sorry, there's nothing at this address.</p>
-        </LayoutView>
-    </NotFound>
-</Router>
+        <Found Context="routeData">
+            <AuthorizeRouteView RouteData="@routeData" DefaultLayout="@typeof(MainLayout)">
+                <NotAuthorized>
+                    <LoginComponent></LoginComponent>
+                </NotAuthorized>
+            </AuthorizeRouteView>
+        </Found>
+        <NotFound>
+            <LayoutView Layout="@typeof(MainLayout)">
+                <p>Sorry, there's nothing at this address.</p>
+            </LayoutView>
+        </NotFound>
+    </Router>
+</CascadingAuthenticationState>
