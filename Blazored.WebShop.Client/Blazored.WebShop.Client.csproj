@@ -11,6 +11,7 @@
     <ProjectReference Include="..\Blazored.WebShop.Client.CustomerPortal\Blazored.WebShop.Client.CustomerPortal.csproj" />
     <ProjectReference Include="..\Blazored.WebShop.Core.Business\Blazored.WebShop.Core.Business.csproj" />
     <ProjectReference Include="..\Blazored.WebShop.Data\Blazored.WebShop.Data.csproj" />
+    <ProjectReference Include="..\Blazored.WebShop.Persistence.SQL\Blazored.WebShop.Persistence.SQL.csproj" />
     <ProjectReference Include="..\Blazored.WebShop.ShoppingCart.LocalStorage\Blazored.WebShop.ShoppingCart.LocalStorage.csproj" />
     <ProjectReference Include="..\Blazored.WebShop.StateStore.DI\Blazored.WebShop.StateStore.DI.csproj" />
   </ItemGroup>

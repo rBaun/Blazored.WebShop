@@ -32,6 +32,8 @@ using Blazored.WebShop.Application.UseCases.CustomerPortal.ViewProduct.Interface
 using Blazored.WebShop.Core.Business.Services;
 using Blazored.WebShop.Core.Business.Services.Interfaces;
 using Blazored.WebShop.Data.Repositories;
+using Blazored.WebShop.Persistence.SQL.Wrappers;
+using Blazored.WebShop.Persistence.SQL.Wrappers.Interfaces;
 using Blazored.WebShop.StateStore.DI;
 
 namespace Blazored.WebShop.Client
@@ -63,6 +65,7 @@ namespace Blazored.WebShop.Client
 
             services.AddSingleton<IProductRepository, ProductRepository>();
             services.AddSingleton<IOrderRepository, OrderRepository>();
+            services.AddSingleton<IDataAccess, DataAccess>();
 
             services.AddScoped<IShoppingCart, ShoppingCart.LocalStorage.ShoppingCart>();
             services.AddScoped<IShoppingCartStateStore, ShoppingCartStateStore>();
