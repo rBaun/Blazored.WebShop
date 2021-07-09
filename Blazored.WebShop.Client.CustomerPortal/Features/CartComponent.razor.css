@@ -1,0 +1,16 @@
+﻿#cart-container {
+    color: #F4F4FB;
+}
+
+    #cart-container:hover {
+        text-decoration-line: none;
+        color: #007AF5;
+    }
+
+.cart-icon {
+    font-size: 175%;
+}
+
+.cart-item-number {
+    font-size: 125%;
+}
